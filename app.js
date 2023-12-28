@@ -16,6 +16,7 @@ const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
 
+// Start express app
 const app = express();
 
 app.set('view engine', 'pug');
@@ -28,21 +29,6 @@ app.use(express.static(path.join(__dirname, 'public/js')));
 
 // Set security HTTP headers
 app.use(helmet());
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       scriptSrc: [
-//         "'self'",
-//         'https://cdnjs.cloudflare.com',
-//         'https://api.mapbox.com',
-//         'blob:',
-//         'https://js.stripe.com',
-//       ],
-//       // include other directives as needed
-//     },
-//   }),
-// );
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
